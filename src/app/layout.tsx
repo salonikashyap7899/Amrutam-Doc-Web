@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+// If you want to use a local (non-Google) font like "Geist",
+// place the .woff/.woff2 files in `public/fonts/Geist/` and
+// uncomment the example below. Leaving these commented avoids
+// build errors when the files are not present.
+// import localFont from 'next/font/local'
 import "./globals.css";
 
 const inter = Inter({
@@ -11,6 +16,23 @@ const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
+
+/* Example: local Geist font (commented out). To enable:
+   1. Add Geist .woff/.woff2 files to `public/fonts/Geist/`
+   2. Uncomment the import `localFont` at the top of this file
+   3. Uncomment the block below and replace filenames as needed
+   4. Replace `${inter.variable}` in the <body> class with `${geist.variable}`
+
+import localFont from 'next/font/local'
+
+const geist = localFont({
+  src: [
+    { path: '/fonts/Geist/Geist-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '/fonts/Geist/Geist-Bold.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-geist',
+})
+*/
 
 export const metadata: Metadata = {
   title: "Create Next App",
